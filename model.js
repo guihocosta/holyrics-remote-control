@@ -1,5 +1,5 @@
 export const HolyricsModel = {
-    apiBase: "http://localhost:8091", 
+    apiBase: "http://192.168.0.85:8091", 
     token: "UZZUVA0LSsgfhLqw",
 
     async execute(action) {
