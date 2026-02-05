@@ -1,0 +1,11 @@
+{
+  "name": "HolyControl",
+  "short_name": "Holyrics",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#121212",
+  "description": "Controle remoto para Holyrics via Web",
+  "icons": [
+    { "src": "https://cdn-icons-png.flaticon.com/512/5058/5058428.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

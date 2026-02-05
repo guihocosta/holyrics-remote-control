@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <title>Holyrics Mobile</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <span id="connection-status" class="offline">DESCONECTADO</span>
+        </header>
+
+        <main class="controls">
+            <button id="prev-btn" class="nav-btn">VOLTAR</button>
+            <button id="next-btn" class="nav-btn primary">PRÓXIMO</button>
+        </main>
+
+        <footer class="extra-controls">
+            <button id="clear-btn" class="secondary-btn">FECHAR SLIDE</button>
+            <button id="black-btn" class="secondary-btn">TELA PRETA</button>
+        </footer>
+    </div>
+    <script type="module" src="controller.js"></script>
+</body>
+</html>
