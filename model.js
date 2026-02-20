@@ -8,24 +8,17 @@ export const HolyricsModel = {
         try {
             const response = await fetch(url, {
                 method: 'POST',
-                // Removendo o 'no-cors' para permitir o Content-Type correto
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                    'Content-Type': 'application/json'
                 },
-                // A doc exige um body JSON, mesmo que vazio
-                body: JSON.stringify({}) 
+                body: JSON.stringify({}) // O Holyrics exige o corpo JSON
             });
-    
-            if (response.status === 415) {
-                console.error("Erro 415: O Holyrics não aceitou o Content-Type. Verifique o body.");
-                return false;
-            }
-    
+
             return response.ok;
         } catch (error) {
-            // Se cair aqui por erro de CORS, o slide pode ter passado mesmo assim
-            console.warn("Possível bloqueio de CORS, mas a requisição foi enviada:", error);
+            // Em rede móvel, o CORS pode gerar um erro no console, 
+            // mas o comando costuma chegar ao PC.
+            console.warn("Requisição enviada. Verifique o Holyrics.");
             return true; 
         }
     }
