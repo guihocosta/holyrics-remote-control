@@ -7,17 +7,17 @@ export const HolyricsModel = {
         
         try {
             const response = await fetch(url, {
-                method: 'POST', // O Holyrics exige POST
+                method: 'POST',
                 headers: {
-                    'Content-Type': 'text/plain', 
+                    'Content-Type': 'application/json',
                     'ngrok-skip-browser-warning': 'true'
                 },
-                body: JSON.stringify({})
+                body: JSON.stringify({}) 
             });
 
             return response.ok;
         } catch (error) {
-            console.warn("Requisição enviada, mas sem resposta legível. Cheque o slide.");
+            console.warn("Comando enviado. Verifique o slide no PC.");
             return true; 
         }
     }
