@@ -1,5 +1,5 @@
 export const HolyricsModel = {
-    apiBase: "needier-makenzie-unseethed.ngrok-free.dev", 
+    apiBase: "https://needier-makenzie-unseethed.ngrok-free.dev", 
     token: "1XEPSIzDfKFcXh1K",
 
     async execute(action) {
