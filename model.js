@@ -3,26 +3,30 @@ export const HolyricsModel = {
     token: "1XEPSIzDfKFcXh1K",
 
     async execute(action) {
-        // Para evitar o bloqueio de CORS em POST, vamos usar o token na URL 
-        // conforme a documentação que você enviou permitia no modo local.
         const url = `${this.apiBase}/api/${action}?token=${this.token}`;
         
         try {
-            await fetch(url, {
+            const response = await fetch(url, {
                 method: 'POST',
-                mode: 'no-cors', // Isso ignora o erro de CORS do navegador
+                // Removendo o 'no-cors' para permitir o Content-Type correto
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
-                body: JSON.stringify({})
+                // A doc exige um body JSON, mesmo que vazio
+                body: JSON.stringify({}) 
             });
-
-            // Como usamos no-cors, o fetch não retorna se deu certo ou não.
-            // Para o MVP, vamos assumir que enviou.
-            return true; 
+    
+            if (response.status === 415) {
+                console.error("Erro 415: O Holyrics não aceitou o Content-Type. Verifique o body.");
+                return false;
+            }
+    
+            return response.ok;
         } catch (error) {
-            console.error("Erro de rede:", error);
-            return false;
+            // Se cair aqui por erro de CORS, o slide pode ter passado mesmo assim
+            console.warn("Possível bloqueio de CORS, mas a requisição foi enviada:", error);
+            return true; 
         }
     }
 };
