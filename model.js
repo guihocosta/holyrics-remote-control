@@ -1,5 +1,5 @@
 export const HolyricsModel = {
-    apiBase: "https://answer-handles-discussions-wooden.trycloudflare.com", 
+    apiBase: "needier-makenzie-unseethed.ngrok-free.dev", 
     token: "1XEPSIzDfKFcXh1K",
 
     async execute(action) {
@@ -9,17 +9,16 @@ export const HolyricsModel = {
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'ngrok-skip-browser-warning': 'true' 
                 },
-                body: JSON.stringify({}) // O Holyrics exige o corpo JSON
+                body: JSON.stringify({})
             });
 
             return response.ok;
         } catch (error) {
-            // Em rede móvel, o CORS pode gerar um erro no console, 
-            // mas o comando costuma chegar ao PC.
-            console.warn("Requisição enviada. Verifique o Holyrics.");
-            return true; 
+            console.error("Erro de conexão. O Ngrok está aberto no PC?", error);
+            return false;
         }
     }
 };
