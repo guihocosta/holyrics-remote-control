@@ -1,5 +1,5 @@
 export const HolyricsModel = {
-    apiBase: "https://proposal-dialog-marketplace-province.trycloudflare.com", 
+    apiBase: "https://behavior-forums-wash-icons.trycloudflare.com", 
     token: "1XEPSIzDfKFcXh1K",
 
     async execute(action) {
