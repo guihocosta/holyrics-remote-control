@@ -1,5 +1,5 @@
 export const HolyricsModel = {
-    apiBase: "https://behavior-forums-wash-icons.trycloudflare.com", 
+    apiBase: "https://answer-handles-discussions-wooden.trycloudflare.com", 
     token: "1XEPSIzDfKFcXh1K",
 
     async execute(action) {
